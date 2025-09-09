@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "server": "cross-env NODE_ENV=development tsx server/index.ts",
-    "build": "vite build && esbuild server/index.ts --platform=node --bundle --format=esm --outdir=dist --external:express --external:./vite --external:./routes --external:@neondatabase/serverless --external:drizzle-orm --external:drizzle-zod --external:zod --external:zod-validation-error --external:ws --external:connect-pg-simple --external:express-session --external:memorystore --external:passport --external:passport-local",
+    "build": "vite build && esbuild ./server/index.ts --platform=node --bundle --format=esm --outdir=dist --external:express --external:./vite --external:./routes --external:@neondatabase/serverless --external:drizzle-orm --external:drizzle-zod --external:zod --external:zod-validation-error --external:ws --external:connect-pg-simple --external:express-session --external:memorystore --external:passport --external:passport-local --loader:.ts=ts --tsconfig=./tsconfig.json",
     "build:client": "vite build",
     "build:server": "tsup server/index.ts --format esm --out-dir dist --dts",
     "start": "cross-env NODE_ENV=production node dist/index.js",
